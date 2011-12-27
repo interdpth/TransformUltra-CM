@@ -48,6 +48,14 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 
+#QCOM
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_LIBS := true
+#GPS
+BOARD_USES_QCOM_GPS := true
+BOARD_USES_QCOM_LIBRPC := true
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := transformultra
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 # custom lun0 file for USB Mass Storage
 #BOARD_UMS_LUNFILE := /sys/devices/platform/s3c-usbgadget/gadget/lun0/file
 BOARD_RECOVERY_HANDLES_MOUNT := true
