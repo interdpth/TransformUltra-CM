@@ -56,6 +56,18 @@ BOARD_USES_QCOM_GPS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := transformultra
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+TARGET_NO_BOOTLOADER := true
+TARGET_CPU_ABI := armeabi
+HAVE_HTC_AUDIO_DRIVER := true
+BOARD_USES_GENERIC_AUDIO := true
+
+# no hardware camera
+USE_CAMERA_STUB := true
+
+BOARD_HAVE_BLUETOOTH := true
+BT_ALT_STACK := true
+BRCM_BT_USE_BTL_IF := true
+BRCM_BTL_INCLUDE_A2DP := true
 # custom lun0 file for USB Mass Storage
 #BOARD_UMS_LUNFILE := /sys/devices/platform/s3c-usbgadget/gadget/lun0/file
 BOARD_RECOVERY_HANDLES_MOUNT := true

@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_transformultra.mk
+    $(LOCAL_DIR)/transformultra.mk
