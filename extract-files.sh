@@ -2,41 +2,13 @@
 
 mkdir -p ../../../vendor/samsung/transformultra/proprietary
 DIRS="
-usr
-usr/keylayout/
-usr/keychars/
-lib
-lib/hw
-lib/egl
-lib/modules
-lib/bluez-plugin
-lib/plugins
-lib/soundfx
-cameradata
-media
-bin
 etc
 etc/bluetooth
-etc/dhcpcd
-etc/dhcpcd/dhcpcd-hooks
 etc/firmware
-etc/permissions
-etc/ppp
 etc/wifi
-vendor
-vendor/etc
-vendor/lib
-vendor/lib/hw
-vendor/bin
-usr
-usr/icu
-usr/share
-usr/share/bmd
-
-usr/keylayout
-framework
-
-
+lib/egl
+lib/hw
+bin
 "
 
 for DIR in $DIRS; do
@@ -44,423 +16,134 @@ mkdir -p ../../../vendor/samsung/transformultra/proprietary/$DIR
 done
 
 FILES="
-
-
-etc/init.qcom.post_boot.sh
-etc/gps.conf
-etc/init.cdma-pppd
-etc/init.qcom.sdio.sh
-etc/media_profiles.xml
-etc/event-log-tags
-etc/wimax_boot.bin
-
-etc/security/otacerts.zip
-etc/security/cacerts.bks
-etc/BOOST_PRIVACY.html
-etc/resolv.conf
-
-etc/ppp
-etc/ppp/ip-down
-etc/ppp/ip-up-vpn
-etc/ppp/pap-secrets
-etc/ppp/options
-etc/ppp/chap-secrets
-etc/ppp/ip-up
-
-
-etc/updatecmds
-etc/updatecmds/google_generic_update.txt
-etc/init.qcom.coex.sh
-
-etc/wifi
-etc/wifi/bcm4330_sta.bin
+etc/vold.fstab
+etc/init.qcom.bt.sh
+etc/apns-conf.xml
 etc/wifi/wpa_supplicant.conf
-etc/wifi/nvram_net.txt
-etc/wifi/wl
+etc/AudioFilter.csv
+etc/AutoVolumeControl.txt
+etc/firmware/yamato_pfp.fw
+etc/firmware/yamato_pm4.fw
+etc/init.qcom.coex.sh
+etc/init.qcom.fm.sh
+etc/init.qcom.post_boot.sh
+etc/init.qcom.sdio.sh
+etc/bluetooth/BCM4329.hcd
+
+
 etc/wifi/bcm4330_aps.bin
 etc/wifi/bcm4330_mfg.bin
+etc/wifi/bcm4330_sta.bin
 etc/wifi/nvram_mfg.txt
+etc/wifi/nvram_net.txt
 etc/wifi/wifi.conf
-etc/dhcpcd
-etc/dhcpcd/dhcpcd.conf
-etc/dhcpcd/dhcpcd-run-hooks
-etc/dhcpcd/dhcpcd-hooks
-etc/dhcpcd/dhcpcd-hooks/95-configured
-etc/dhcpcd/dhcpcd-hooks/20-dns.conf
-etc/dhcpcd/dhcpcd-hooks/01-test
-etc/init.gprs-pppd
-
-
-
-
-etc/firmware/vidc_720p_mp4_enc_mc.fw
-etc/firmware/vidc_720p_vc1_dec_mc.fw
-etc/firmware/vidc_720p_command_control.fw
-etc/firmware/vidc_720p_h264_enc_mc.fw
-etc/firmware/vidc_720p_h264_dec_mc.fw
-etc/firmware/vidc_720p_h263_dec_mc.fw
-etc/firmware/vidc_720p_mp4_dec_mc.fw
-etc/firmware/yamato_pfp.fw
-etc/firmware/wlan
-etc/firmware/wlan/qcom_fw.bin
-etc/firmware/wlan/cfg.dat
-etc/firmware/wlan/volans
-etc/firmware/wlan/volans/WCN1314_qcom_cfg.ini
-etc/firmware/wlan/volans/WCN1314_qcom_fw.bin
-etc/firmware/wlan/volans/WCN1314_qcom_wlan_nv.bin
-etc/firmware/wlan/volans/WCN1314_cfg.dat
-etc/firmware/yamato_pm4.fw
-
-etc/init.qcom.fm.sh
-etc/pvplayer.cfg
-etc/01_qcomm_omx.cfg
-etc/thermald.conf
-etc/BOOST_PRIVACY_es.html
-etc/init.qcom.wifi.sh
-etc/apns-conf.xml
-etc/.nomedia
-etc/vold.fstab
-etc/SPRINT_PRIVACY_es.html
+etc/wifi/wl
+etc/wifi/wpa_supplicant.conf
+etc/wimax_boot.bin
 etc/wimaxfw.bin
-vendor
-vendor/etc
-vendor/etc/gps.xml
-vendor/lib
-vendor/lib/hw
-vendor/lib/hw/gps.msm7k.so
-vendor/lib/libsec-ril.so
-vendor/bin
-vendor/bin/gpsd
-lib
-lib/libgps.so
-lib/libvoem_if.so
-lib/libpng.so
-lib/libqmiservices.so
-lib/libtalk_jni.so
-lib/librefcne.so
-lib/libjnigraphics.so
-lib/libgemini.so
-lib/libQWiFiSoftApCfg.so
-lib/libiq_client.so
-lib/libcameraservice.so
-lib/libOmxAacDec.so
-lib/libwlbrcmp2papp.so
-lib/libQmageDecoder.so
-lib/libOmxVenc.so
-lib/libnativehelper.so
-lib/libmm-abl.so
-lib/libOmxAmrDec.so
-lib/libstagefright.so
-lib/libdssock.so
-lib/libacc.so
-lib/libsurfaceflinger.so
-lib/libdvm.so
-lib/libOmxQcelpHwDec.so
-lib/libmmosal.so
-lib/libomx_amrdec_sharedlibrary.so
-lib/libstagefright_enc_common.so
-lib/hw
-lib/hw/gps.default.so
-lib/hw/sensors.SPH-M930.so
-lib/hw/lights.msm7k.so
-lib/hw/gralloc.msm7k.so
-lib/hw/overlay.default.so
-lib/hw/gralloc.default.so
-lib/hw/sensors.default.so
-lib/hw/sensors.SPH-M930BST.so
-lib/libstagefright_avc_common.so
-lib/libomx_m4vdec_sharedlibrary.so
-lib/libOmxEvrcEnc.so
-lib/libopencore_rtspreg.so
-lib/libaudioalsa.so
-lib/libsec-ril.so
-lib/libwlwpscli.so
-lib/libsoundpool.so
-lib/libbluetoothd.so
-lib/libmm-omxcore.so
-lib/libandroid_runtime.so
-lib/lib_Samsung_Sound_Booster.so
-lib/libSR_AudioIn.so
-lib/egl
-lib/egl/libGLESv2_adreno200.so
-lib/egl/libEGL_adreno200.so
-lib/egl/libq3dtools_adreno200.so
-lib/egl/libGLES_android.so
-lib/egl/libGLESv1_CM_adreno200.so
-lib/egl/egl.cfg
-lib/libFFTEm.so
-lib/libskia.so
-lib/liboemcamera.so
-lib/libjni_pinyinime.so
-lib/libomx_aripcmdec_sharedlibrary.so
-lib/libpbmlib.so
-lib/libopencore_author.so
-lib/libomx_wmvdec_ari_sharedlibrary.so
-lib/libsystem_server.so
-lib/libgstk_exp.so
-lib/libcm.so
-lib/libOmxEvrcDec.so
-lib/libopencore_mp4localreg.so
-lib/libaudio.so
-lib/libsensor_yamaha_test.so
-lib/libsonivox.so
-lib/libsisodrm.so
-lib/libopencore_downloadreg.so
-lib/libbluedroid.so
-lib/libdsprofile.so
-lib/libthread_db.so
-lib/libOpenVG.so
-lib/libpvdivxdrm.so
-lib/libsthmb.so
-lib/libwlp2p.so
-lib/libuim.so
-lib/libdsutils.so
-lib/libqmi.so
-lib/libexpat.so
-lib/libopencore_rtsp.so
-lib/libaudioeffect_jni.so
-lib/libopencore_mp4local.so
-lib/libsecril-client.so
-lib/libomx_wmadec_ari_sharedlibrary.so
-lib/libRS.so
-lib/libaudioeq.so
-lib/libomx_mp3dec_ari_sharedlibrary.so
-lib/modules
-lib/modules/librasdioif.ko
-lib/modules/WCN1314_rf.ko
-lib/modules/libra.ko
-lib/modules/WCN1314_rf_ftm.ko
-lib/libttspico.so
-lib/libmmparser_divxdrmlib.so
-lib/libskiagl.so
-lib/libquramvdecoder.so
-lib/libsrec_jni.so
-lib/libmmjpeg.so
-lib/libloc-rpc.so
-lib/libsqlite_jni.so
-lib/libwmlscriptcore.so
-lib/liboncrpc.so
-lib/libquramimagecodec.so
-lib/liboverlay.so
-lib/libsamsungSoundbooster.so
-lib/libpdapi.so
-lib/bluez-plugin
-lib/bluez-plugin/input.so
-lib/bluez-plugin/audio.so
-lib/libwldhcp.so
-lib/libauth.so
-lib/libgsdi_exp.so
-lib/libOmxAmrEnc.so
-lib/libttssynthproxy.so
-lib/libOmxMp3Dec.so
-lib/libplayready.so
-lib/libOmxQcelp13Enc.so
-lib/libnetmgr.so
-lib/libomx_aacdec_ari_sharedlibrary.so
-lib/libdss.so
-lib/libfm_wan_api.so
-lib/libqcomm_omx.so
-lib/libjpeg.so
-lib/libmmparser.so
-lib/libwlwps.so
-lib/libomx_divxdec_ari_sharedlibrary.so
-lib/libping_mdm.so
-lib/libopencore_net_support.so
-lib/libdivx_jni.so
-lib/libexif.so
-lib/libbluetooth.so
-lib/libmvs.so
-lib/libdivxdrmdecrypt.so
-lib/libmmipl.so
-lib/libmedia_jni.so
-lib/libloc_api-rpc-qc.so
-lib/libiprouteutil.so
-lib/liboem_rapi.so
-lib/libOmxAmrRtpDec.so
-lib/libstagefright_foundation.so
-lib/librs_jni.so
-lib/liba2dp.so
-lib/libwebcore.so
-lib/libstagefright_amrnb_common.so
-lib/libopencorehw.so
-lib/libnfc_ndef.so
-lib/libqsap_sdk.so
-lib/libandroid_servers.so
-lib/libopencore_download.so
-lib/libaudiopolicy.so
-lib/libsensorservice.so
-lib/libandroid.so
-lib/libmediaplayerservice.so
-lib/libOmxAacEnc.so
-lib/libwms.so
-lib/libsavscmn.so
-lib/libstagefright_omx.so
-lib/libstdc++.so
-lib/libOmxVdec.so
-lib/libdrm2_jni.so
-lib/libpdsm_atl.so
-lib/libmmgsdilib.so
-lib/libOmxCore.so
-lib/libidl.so
-lib/libomadrm.so
-lib/libril.so
-lib/libnetutils.so
-lib/libssl.so
-lib/libnetlink.so
-lib/libdiskconfig.so
-lib/libomx_flacdec_ari_sharedlibrary.so
-lib/libpixelflinger.so
-lib/libOmxWmaDec.so
-lib/libSwypeCore.so
-lib/libdsnet.so
-lib/libaudioflinger.so
-lib/libcamera.so
-lib/libdrm1_jni.so
-lib/libqueue.so
-lib/libOmxQcelp13Dec.so
-lib/libsavsac.so
-lib/librpc.so
-lib/libstagefrighthw.so
-lib/libctest.so
-lib/libsysutils.so
-lib/plugins
-lib/plugins/com.adobe.flashplayer
-lib/plugins/com.adobe.flashplayer/libflashplayer.so
-lib/plugins/com.adobe.flashplayer/libysshared.so
-lib/plugins/com.adobe.flashplayer/libstagefright_honeycomb.so
-lib/plugins/com.adobe.flashplayer/libstagefright_froyo.so
-lib/libdsm.so
-lib/libiq_service.so
-lib/libquramgifmovie.so
-lib/libOpenSLES.so
-lib/libnv.so
-lib/libGLESv1_CM.so
-lib/librtp_jni.so
-lib/libomx_sharedlibrary.so
-lib/libdivxdrm.so
-lib/libOmxAdpcmDec.so
-lib/libvoicesearch.so
-lib/libomx_avcdec_sharedlibrary.so
-lib/soundfx
-lib/soundfx/libbundlewrapper.so
-lib/soundfx/libvisualizer.so
-lib/soundfx/libreverbwrapper.so
+etc/wimaxloader.bin
+
+lib/libril-qc-1.so
+lib/libril-qcril-hook-oem.so
 lib/libgsl.so
-lib/libC2D2.so
-lib/libsqlite.so
-lib/libstagefright_color_conversion.so
-lib/libOmxAmrwbDec.so
-lib/libloc_ext.so
-lib/libomx_ac3dec_sharedlibrary.so
 lib/libdiag.so
-lib/libopencore_common.so
-lib/libopencore_player.so
+lib/libcm.so
+lib/liboncrpc.so
+lib/libqmi.so
+lib/libdsm.so
+lib/libqueue.so
+lib/libdll.so
+lib/libmmgsdilib.so
+lib/libgsdi_exp.so
+lib/libgstk_exp.so
+lib/libwms.so
+lib/libnv.so
+lib/libwmsts.so
+lib/libpbmlib.so
+lib/libdss.so
+lib/libauth.so
+lib/libcamera.so
+lib/liboemcamera.so
+lib/libcameraservice.so
+lib/libcamera_client.so
+lib/libmmjpeg.so
+lib/libmmipl.so
+lib/libmm-adspsvc.so
+lib/libOmxAacDec.so
+lib/libOmxWmvDec.so
+lib/libOmxAdpcmDec.so
+lib/libOmxH264Dec.so
+lib/libOmxAmrDec.so
+lib/libOmxAmrwbDec.so
+lib/libOmxWmaDec.so
+lib/libOmxMp3Dec.so
+lib/libOmxMpeg4Dec.so
+lib/libOmxAmrRtpDec.so
+lib/libOmxAacEnc.so
+lib/libOmxEvrcEnc.so
+lib/libOmxAmrEnc.so
+lib/libOmxQcelp13Enc.so
+lib/libOmxVidEnc.so
+lib/libomx_aacdec_sharedlibrary.so
+lib/libomx_amrdec_sharedlibrary.so
+lib/libomx_amrenc_sharedlibrary.so
+lib/libomx_avcdec_sharedlibrary.so
+lib/libomx_m4vdec_sharedlibrary.so
+lib/libomx_mp3dec_sharedlibrary.so
+lib/libomx_sharedlibrary.so
+lib/libreference-ril.so
+lib/libril.so
+lib/liboem_rapi.so
 lib/libcommondefs.so
-lib/libdrm1.so
-cameradata
-cameradata/datapattern_420sp_384x288.yuv
-cameradata/sr030pc30_420sp_384x288.yuv
-cameradata/datapattern_420sp_384x288_vital2.yuv
-cameradata/sr130pc10_420sp_384x288.yuv
+lib/libloc_api-rpc-qc.so
+lib/libmmprocess.so
+lib/libhwrpc.so
+
+bin/oem_rpc_svc
+bin/vold
+bin/modempre
+bin/wpa_supplicant
+bin/wl
+bin/port-bridge
+bin/brcm_patchram_plus
+bin/akmd8962
+bin/akmd8975
+bin/compassd
+
+bin/qmuxd
+bin/rild
+lib/libcm.so
+lib/libdiag.so
+lib/libdll.so
+lib/libdsm.so
+lib/libdss.so
+lib/libgsdi_exp.so
+lib/libgstk_exp.so
+lib/libmmgsdilib.so
+lib/libnv.so
+lib/liboncrpc.so
+lib/libpbmlib.so
+lib/libqmi.so
+lib/libqueue.so
+lib/libril.so
+lib/libril.so
+lib/libril-qc-1.so
+lib/libril-qcril-hook-oem.so
+lib/libwms.so
+lib/libwmsts.so
+
+lib/hw/sensors.default.so
+lib/hw/lights.msm7k.so
+lib/hw/copybit.msm7k.so
+lib/hw/gralloc.msm7k.so
+lib/hw/gps.default.so
+
+lib/egl/libEGL_adreno200.so
+lib/egl/libGLESv2_adreno200.so
+lib/egl/libGLESv1_CM_adreno200.so
+lib/egl/libq3dtools_adreno200.so
 
 
-
-bin/BCM4330B1_002.001.003.0221.0316.hcd
-
-media
-media/wireless_charging_5.qmg
-media/wireless_charging_25.qmg
-media/wireless_charging_40.qmg
-media/battery_charging_90.qmg
-media/battery_charging_45.qmg
-media/wireless_charging_60.qmg
-media/battery_charging_55.qmg
-media/wireless_charging_75.qmg
-media/wireless_charging_15.qmg
-media/bootanimation.zip
-media/battery_charging_50.qmg
-media/battery_charging_65.qmg
-media/battery_charging_30.qmg
-media/wireless_charging_70.qmg
-media/wireless_charging_100.qmg
-media/wireless_charging_85.qmg
-media/wireless_charging_80.qmg
-media/usb_not_charging.qmg
-media/battery_charging_70.qmg
-media/wireless_charging_90.qmg
-media/wireless_charging_65.qmg
-media/battery_charging_5.qmg
-media/wireless_charging_55.qmg
-media/wireless_charging_20.qmg
-media/wireless_charging_45.qmg
-media/battery_charging_100.qmg
-media/chargingwarning_auth.qmg
-media/battery_charging_25.qmg
-media/wireless_charging_30.qmg
-media/wireless_charging_10.qmg
-media/battery_charging_60.qmg
-media/battery_charging_10.qmg
-media/battery_charging_15.qmg
-media/battery_charging_20.qmg
-media/wireless_charging_50.qmg
-media/wireless_charging_35.qmg
-media/chargingwarning_temp.qmg
-media/battery_charging_80.qmg
-media/wireless_charging_95.qmg
-media/battery_charging_95.qmg
-media/battery_charging_40.qmg
-media/battery_charging_35.qmg
-media/battery_charging_85.qmg
-media/battery_charging_75.qmg
-
-
-usr/keylayout
-usr/keylayout/Broadcom_Bluetooth_HID.kl
-usr/keylayout/qwerty.kl
-usr/keylayout/vital2-keypad.kl
-usr/keylayout/AVRCP.kl
-usr/keylayout/sec_jack.kl
-usr/keylayout/pwr_key.kl
-usr/keylayout/msm_tma300_ts.kl
-usr/icu
-usr/icu/icudt44l.dat
-usr/srec
-usr/srec/config
-usr/srec/config/en.us
-usr/srec/config/en.us/baseline.par
-usr/srec/config/en.us/baseline11k.par
-usr/srec/config/en.us/models
-usr/srec/config/en.us/models/generic11.lda
-usr/srec/config/en.us/models/generic8.lda
-usr/srec/config/en.us/models/generic.swiarb
-usr/srec/config/en.us/models/generic11_m.swimdl
-usr/srec/config/en.us/models/generic8_m.swimdl
-usr/srec/config/en.us/models/generic8_f.swimdl
-usr/srec/config/en.us/models/generic11_f.swimdl
-usr/srec/config/en.us/baseline8k.par
-usr/srec/config/en.us/dictionary
-usr/srec/config/en.us/dictionary/enroll.ok
-usr/srec/config/en.us/dictionary/basic.ok
-usr/srec/config/en.us/dictionary/cmu6plus.ok.zip
-usr/srec/config/en.us/g2p
-usr/srec/config/en.us/g2p/en-US-ttp.data
-usr/srec/config/en.us/grammars
-usr/srec/config/en.us/grammars/boolean.g2g
-usr/srec/config/en.us/grammars/phone_type_choice.g2g
-usr/srec/config/en.us/grammars/VoiceDialer.g2g
-usr/share
-usr/share/bmd
-usr/share/bmd/RFFspeed_501.bmd
-usr/share/bmd/RFFstd_501.bmd
-usr/share/zoneinfo
-usr/share/zoneinfo/zoneinfo.dat
-usr/share/zoneinfo/zoneinfo.idx
-usr/share/zoneinfo/zoneinfo.version
-usr/keychars
-usr/keychars/pwr_key.kcm.bin
-usr/keychars/vital2-keypad.kcm.bin
-usr/keychars/qwerty2.kcm.bin
-usr/keychars/qwerty.kcm.bin
 "
 
 
@@ -469,6 +152,161 @@ usr/keychars/qwerty.kcm.bin
 for FILE in $FILES; do
 adb pull system/$FILE ../../../vendor/samsung/transformultra/proprietary/$FILE
 done
+
+
+
+(cat << EOF) | sed s/__DEVICE__/transformultra/g > ../../../vendor/samsung/transformultra/transformultra-vendor-blobs.mk
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \\
+vendor/samsung/transformultra/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \\
+vendor/samsung/transformultra/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \\
+vendor/samsung/transformultra/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \\
+vendor/samsung/transformultra/proprietary/lib/libgsl.so:system/lib/libgsl.so \\
+vendor/samsung/transformultra/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \\
+vendor/samsung/transformultra/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
+
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/bin/qmuxd:system/bin/qmuxd \\
+vendor/samsung/transformultra/proprietary/bin/akmd8962:system/bin/akmd8962 \\
+vendor/samsung/transformultra/proprietary/bin/akmd8975:system/bin/akmd8975 \\
+vendor/samsung/transformultra/proprietary/bin/compassd:system/bin/compassd \\
+vendor/samsung/transformultra/proprietary/lib/libdiag.so:system/lib/libdiag.so \\
+vendor/samsung/transformultra/proprietary/lib//libcm.so:system/lib/libcm.so \\
+vendor/samsung/transformultra/proprietary/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \\
+vendor/samsung/transformultra/proprietary/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \\
+vendor/samsung/transformultra/proprietary/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \\
+vendor/samsung/transformultra/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \\
+vendor/samsung/transformultra/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \\
+vendor/samsung/transformultra/proprietary/lib/libqmi.so:system/lib/libqmi.so \\
+vendor/samsung/transformultra/proprietary/lib/libdsm.so:system/lib/libdsm.so \\
+vendor/samsung/transformultra/proprietary/lib/libqueue.so:system/lib/libqueue.so \\
+vendor/samsung/transformultra/proprietary/lib/libdll.so:system/lib/libdll.so \\
+vendor/samsung/transformultra/proprietary/lib/libmmgsdilib.so:system/lib/libmmgsdilib.so \\
+vendor/samsung/transformultra/proprietary/lib/libgsdi_exp.so:system/lib/libgsdi_exp.so \\
+vendor/samsung/transformultra/proprietary/lib/libgstk_exp.so:system/lib/libgstk_exp.so \\
+vendor/samsung/transformultra/proprietary/lib/libwms.so:system/lib/libwms.so \\
+vendor/samsung/transformultra/proprietary/lib/libnv.so:system/lib/libnv.so \\
+vendor/samsung/transformultra/proprietary/lib/libwmsts.so:system/lib/libwmsts.so \\
+vendor/samsung/transformultra/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \\
+vendor/samsung/transformultra/proprietary/lib/libdss.so:system/lib/libdss.so \\
+vendor/samsung/transformultra/proprietary/lib/libauth.so:system/lib/libauth.so
+
+# Camera
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/libcamera.so:system/lib/libcamera.so \\
+vendor/samsung/transformultra/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
+vendor/samsung/transformultra/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \\
+vendor/samsung/transformultra/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \\
+vendor/samsung/transformultra/proprietary/lib/libcameraservice.so:system/lib/libcameraservice.so \\
+vendor/samsung/transformultra/proprietary/lib/libcamera_client.so:system/lib/libcamera_client.so \\
+vendor/samsung/transformultra/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \\
+vendor/samsung/transformultra/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \\
+vendor/samsung/transformultra/proprietary/lib/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so
+
+# OMX
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/libOmxWmvDec.so:/system/lib/libOmxWmvDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAacDec.so:/system/lib/libOmxAacDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAdpcmDec.so:/system/lib/libOmxAdpcmDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxH264Dec.so:/system/lib/libOmxH264Dec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAmrDec.so:/system/lib/libOmxAmrDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAmrwbDec.so:/system/lib/libOmxAmrwbDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxWmaDec.so:/system/lib/libOmxWmaDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxMp3Dec.so:/system/lib/libOmxMp3Dec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxMpeg4Dec.so:/system/lib/libOmxMpeg4Dec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAmrRtpDec.so:/system/lib/libOmxAmrRtpDec.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAacEnc.so:/system/lib/libOmxAacEnc.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxEvrcEnc.so:/system/lib/libOmxEvrcEnc.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxAmrEnc.so:/system/lib/libOmxAmrEnc.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxQcelp13Enc.so:/system/lib/libOmxQcelp13Enc.so \\
+vendor/samsung/transformultra/proprietary/lib/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \\
+vendor/samsung/transformultra/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so
+
+# HW
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so \\
+vendor/samsung/transformultra/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \\
+vendor/samsung/transformultra/proprietary/lib/hw/copybit.msm7k.so:system/lib/hw/copybit.msm7k.so \\
+vendor/samsung/transformultra/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so
+
+# vendor
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/bin/oem_rpc_svc:system/bin/oem_rpc_svc \\
+vendor/samsung/transformultra/proprietary/bin/modempre:system/bin/modempre \\
+vendor/samsung/transformultra/proprietary/lib/liboem_rapi.so:/system/lib/liboem_rapi.so \\
+vendor/samsung/transformultra/proprietary/lib/libcommondefs.so:/system/lib/libcommondefs.so \\
+vendor/samsung/transformultra/proprietary/lib/libloc_api-rpc-qc.so:/system/lib/libloc_api-rpc-qc.so \\
+vendor/samsung/transformultra/proprietary/lib/libmmprocess.so:system/lib/libmmprocess.so\\
+vendor/samsung/transformultra/proprietary/lib/libhwrpc.so:system/lib/libhwrpc.so \\
+vendor/samsung/transformultra/proprietary/lib/libhwrpc.so:obj/lib/libhwrpc.so
+
+# wifi
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/bin/wpa_supplicant:system/bin/wpa_supplicant \\
+vendor/samsung/transformultra/proprietary/bin/wl:system/bin/wl
+v
+vendor/samsung/transformultra/proprietary/etc/wifi/bcm4330_aps.bin:system/etc/wifi/bcm4330_aps.bin
+vendor/samsung/transformultra/proprietary/etc/wifi/bcm4330_mfg.bin:system/etc/wifi/bcm4330_mfg.bin
+vendor/samsung/transformultra/proprietary/etc/wifi/bcm4330_sta.bin:system/etc/wifi/bcm4330_sta.bin
+vendor/samsung/transformultra/proprietary/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt
+vendor/samsung/transformultra/proprietary/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt
+vendor/samsung/transformultra/proprietary/etc/wifi/wifi.conf:system/etc/wifi/wifi.conf
+vendor/samsung/transformultra/proprietary/etc/wifi/wl:system/etc/wifi/wl
+vendor/samsung/transformultra/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+vendor/samsung/transformultra/proprietary/etc/wimax_boot.bin:system/etc/wimax_boot.bin:
+vendor/samsung/transformultra/proprietary/etc/wimaxfw.bin:system/etc/wimaxfw.bin
+vendor/samsung/transformultra/proprietary/etc/wimaxloader.bin:system/etc/wimaxloader.bin
+# bluetooth
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/bin/port-bridge:system/bin/port-bridge \\
+vendor/samsung/transformultra/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \\
+vendor/samsung/transformultra/proprietary/etc/bluetooth/BCM4329.hcd:system/etc/bluetooth/BCM4329.hcd
+
+# RIL specific
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/bin/qmuxd:system/bin/qmuxd \\
+vendor/samsung/transformultra/proprietary/bin/rild:system/bin/rild \\
+vendor/samsung/transformultra/proprietary/lib/libcm.so:system/lib/libcm.so \\
+vendor/samsung/transformultra/proprietary/lib/libdiag.so:system/lib/libdiag.so \\
+vendor/samsung/transformultra/proprietary/lib/libdll.so:system/lib/libdll.so \\
+vendor/samsung/transformultra/proprietary/lib/libdsm.so:system/lib/libdsm.so \\
+vendor/samsung/transformultra/proprietary/lib/libdss.so:system/lib/libdss.so \\
+vendor/samsung/transformultra/proprietary/lib/libgsdi_exp.so:system/lib/libgsdi_exp.so \\
+vendor/samsung/transformultra/proprietary/lib/libgstk_exp.so:system/lib/libgstk_exp.so \\
+vendor/samsung/transformultra/proprietary/lib/libmmgsdilib.so:system/lib/libmmgsdilib.so \\
+vendor/samsung/transformultra/proprietary/lib/libnv.so:system/lib/libnv.so \\
+vendor/samsung/transformultra/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \\
+vendor/samsung/transformultra/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \\
+vendor/samsung/transformultra/proprietary/lib/libqmi.so:system/lib/libqmi.so \\
+vendor/samsung/transformultra/proprietary/lib/libqueue.so:system/lib/libqueue.so \\
+vendor/samsung/transformultra/proprietary/lib/libril.so:system/lib/libril.so \\
+vendor/samsung/transformultra/proprietary/lib/libril.so:obj/lib/libril.so \\
+vendor/samsung/transformultra/proprietary/lib/libril-qc-1.so:system/lib/libril-qc-1.so \\
+vendor/samsung/transformultra/proprietary/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \\
+vendor/samsung/transformultra/proprietary/lib/libwms.so:system/lib/libwms.so \\
+vendor/samsung/transformultra/proprietary/lib/libwmsts.so:system/lib/libwmsts.so
+
+EOF
 
 ./setup-makefiles.sh
 
