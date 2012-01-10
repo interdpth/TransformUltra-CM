@@ -16,7 +16,11 @@ mkdir -p ../../../vendor/samsung/transformultra/proprietary/$DIR
 done
 
 FILES="
-
+lib/libgsl.so
+lib/libaudioalsa.so
+lib/liblog.so
+bin/logcat
+bin/logwrapper
 
 "
 
@@ -43,10 +47,11 @@ done
 # limitations under the License.
 
 PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/libgsl.so:system/lib/libgsl.so \\
 
-
-
-
+#audio....
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/libaudioalsa.so:system/lib/libaudioalsa.so 
 # Camera
 PRODUCT_COPY_FILES += \\
 
@@ -71,6 +76,11 @@ PRODUCT_COPY_FILES += \\
 # RIL specific
 PRODUCT_COPY_FILES += \\
 
+#Logcat
+PRODUCT_COPY_FILES += \\
+vendor/samsung/transformultra/proprietary/lib/liblog.so:system/lib/liblog.so \\
+vendor/samsung/transformultra/proprietary/bin/logcat:system/bin/logcat \\
+vendor/samsung/transformultra/proprietary/bin/logwrapper:system/bin/logwrapper
 
 EOF
 

@@ -3,6 +3,14 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 #-include vendor/samsung/transformultra/BoardConfigVendor.mk
 #from samsung source
+
+#from samsung...
+
+TARGET_NO_BOOTLOADER := true
+#TARGET_NO_KERNEL := true
+#HAVE_HTC_AUDIO_DRIVER := true
+
+
 #BOARD_USE_FROYO_LIBCAMERA := false
 TARGET_CPU_ABI := armeabi
 BOARD_USES_ALSA_AUDIO := true
@@ -85,7 +93,7 @@ WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_sta.bin nvram_
 WIFI_DRV_AP_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_aps.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 
 # FM Radio (needed for the audio driver to compile)
-BOARD_USE_QCOM_SPEECH:=true
+#BOARD_USE_QCOM_SPEECH:=true
 #BOARD_HAVE_FM_RADIO := true
 #BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 #BOARD_FM_DEVICE := bcm4325

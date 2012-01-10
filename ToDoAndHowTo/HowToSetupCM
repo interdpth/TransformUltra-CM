@@ -1,0 +1,85 @@
+Get linux
+
+
+Open a terminal
+
+sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+sudo apt-get update
+sudo apt-get install sun-java6-jdk
+
+
+sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.6-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev sun-java6-jdk pngcrush schedtool 
+
+For 64-bit only systems:
+
+sudo apt-get install    g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline5-dev gcc-4.3-multilib g++-4.3-multilib
+
+
+64-bit (recommended)
+
+ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+  zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
+  x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
+  libxml2-utils xsltproc
+
+On Ubuntu 10.10:
+
+ sudo ln -s /usr/lib32/mesa/libGL.so.1 /usr/lib32/mesa/libGL.so
+
+On Ubuntu 11.10:
+
+sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
+
+32-bit (experimental)
+
+ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+  zip curl zlib1g-dev libc6-dev libncurses5-dev x11proto-core-dev \
+  libx11-dev libreadline6-dev libgl1-mesa-dev tofrodos python-markdown \
+  libxml2-utils xsltproc
+
+
+
+JUST DOWNLOAD IT ALLLLLL
+
+
+(If you have a problem downloading a package such as lib32ncurses5-dev do it by itself and it'll tell you about a candiate sudo apt-get install candidate then install rest of the files!)
+
+once done, make a folder for CMSources
+
+Hit it up in terminal 
+
+
+mkdir -p ~/bin
+
+curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+
+Download Android SDK for Linux
+
+Install it by executing tools/Android
+
+blah blah blah I suck I know, 
+
+Put ADB in /usr/bin in root directory
+
+go back to CMSources you made
+
+repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
+repo sync
+
+This will take a while....
+
+After it's done copy the vendor folder inlcuded in teh git  and paste it in the root directory of cmsources
+put this git in cmsources/device/samsung
+rename the folder from transformultra-cm  to transformultra
+
+go to CMSources in command prompt
+
+execute . build/envsetup.sh && brunch transformultra
+
+if you have fixes email me at interdpth at gmail.com
+
+if you wanna send a donation email me for my paypal address :)
+
+
