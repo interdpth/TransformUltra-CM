@@ -1,23 +1,11 @@
-When screen timed out it doesn't shut down screen, screen stays lit
+
+Order of fixing
+
+No Audio
 No wifi
 No Service
 No bluetooth.
-No Audio
 
 
 DEBUGUG#pid: 720, tid: 724  >>> /system/bin/mediaserver 
-java.io.FileNotFoundException: /data/system/entropy.dat (No such file or directory)
-java.io.FileNotFoundException: /data/system/wallpaper_info.xml
-
-libopencore_player.so
-libsisodrm.so
-libomadrm.so
-libopencore_common.so
-libdivxdrm.so
-
-all omx
-iqclient
-iqservice
-libsthmb
-libsavscmn
 

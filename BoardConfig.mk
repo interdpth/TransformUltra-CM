@@ -1,4 +1,4 @@
-USE_CAMERA_STUB := true
+
 
 # inherit from the proprietary version
 #-include vendor/samsung/transformultra/BoardConfigVendor.mk
@@ -6,23 +6,22 @@ USE_CAMERA_STUB := true
 
 #from samsung...
 
-TARGET_NO_BOOTLOADER := true
+#TARGET_NO_BOOTLOADER := true
 #TARGET_NO_KERNEL := true
 #HAVE_HTC_AUDIO_DRIVER := true
-
+BOARD_CAMERA_USE_GETBUFFERINFO:=true
 
 #BOARD_USE_FROYO_LIBCAMERA := false
 TARGET_CPU_ABI := armeabi
+#audiostuff
 BOARD_USES_ALSA_AUDIO := true
-TARGET_PROVIDES_LIBAUDIO := true
-#BOARD_USES_GENERIC_AUDIO :=true
-
-#BUILD_WITH_ALSA_UTILS := false
+TARGET_PROVIDES_LIBAUDIO := false
+BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_GENERIC_AUDIO := false
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := msm7k
 TARGET_BOOTLOADER_BOARD_NAME := transformultra
-
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=SPH-M930BST
 BOARD_KERNEL_BASE := 0x00400000
 BOARD_KERNEL_PAGESIZE := 2048
