@@ -1,27 +1,27 @@
 
 
 # inherit from the proprietary version
+#inherit for msmcommon
+-include device/htc/msm7x30-common/BoardConfigCommon.mk
 #-include vendor/samsung/transformultra/BoardConfigVendor.mk
 #from samsung source
 
 #from samsung...
-
+TARGET_EMULATOR := false
 #TARGET_NO_BOOTLOADER := true
 #TARGET_NO_KERNEL := true
-#HAVE_HTC_AUDIO_DRIVER := true
+HAVE_HTC_AUDIO_DRIVER := true
 BOARD_CAMERA_USE_GETBUFFERINFO:=true
-
+ANDROID_JPEG_NO_ASSEMBLER := true 
 #BOARD_USE_FROYO_LIBCAMERA := false
 TARGET_CPU_ABI := armeabi
 #audiostuff
-BOARD_USES_ALSA_AUDIO := true
-TARGET_PROVIDES_LIBAUDIO := false
-BOARD_USES_QCOM_LIBRPC := true
-BOARD_USES_GENERIC_AUDIO := false
-TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := msm7k
+BOARD_HAVE_FM_RADIO := false
+BOARD_GLOBAL_CFLAGS -= -DHAVE_FM_RADIO
+#TARGET_BOARD_PLATFORM := msm7k
 TARGET_BOOTLOADER_BOARD_NAME := transformultra
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+#TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+BOARD_USES_QCOM_VOIPMUTE := false
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=SPH-M930BST
 BOARD_KERNEL_BASE := 0x00400000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -40,7 +40,6 @@ BOARD_CUSTOM_GRAPHICS :=  ../../../device/samsung/transformultra/files/recovery/
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/transformultra/files/recovery/recovery_ui.c
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-
 
 
 ## PARTITION LAYOUT/INFO ##
@@ -90,7 +89,8 @@ WIFI_DRIVER_FW_STA_PATH := "/system/etc/wifi/bcm4330_sta.bin"
 WIFI_DRIVER_FW_AP_PATH := "/system/etc/wifi/bcm4330_aps.bin"
 WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_DRV_AP_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_aps.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/transformultra/files
+BOARD_USE_QCOM_SPEECH := true
 # FM Radio (needed for the audio driver to compile)
 #BOARD_USE_QCOM_SPEECH:=true
 #BOARD_HAVE_FM_RADIO := true

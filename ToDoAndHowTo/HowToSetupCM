@@ -73,10 +73,33 @@ This will take a while....
 After it's done copy the vendor folder inlcuded in teh git  and paste it in the root directory of cmsources
 put this git in cmsources/device/samsung
 rename the folder from transformultra-cm  to transformultra
-
+go to frameworks/base/include/media open AudioSystem.h
+replace struct audio_format with
+ enum audio_format {
+        INVALID_FORMAT      = -1,
+        FORMAT_DEFAULT      = 0,
+        PCM                 = 0x00000000, // must be 0 for backward compatibility
+        MP3                 = 0x01000000,
+        AMR_NB              = 0x02000000,
+        AMR_WB              = 0x03000000,
+        AAC                 = 0x04000000,
+        HE_AAC_V1           = 0x05000000,
+        HE_AAC_V2           = 0x06000000,
+        VORBIS              = 0x07000000,
+	EVRC                = 0x08000000, 
+	QCELP               = 0x09000000,
+        MAIN_FORMAT_MASK    = 0xFF000000,
+        SUB_FORMAT_MASK     = 0x00FFFFFF,
+        // Aliases
+        PCM_16_BIT          = (PCM|PCM_SUB_16_BIT),
+        PCM_8_BIT          = (PCM|PCM_SUB_8_BIT)
+    };
 go to CMSources in command prompt
 
 execute . build/envsetup.sh && brunch transformultra
+
+
+
 
 if you have fixes email me at interdpth at gmail.com
 
