@@ -7,20 +7,21 @@
 #from samsung source
 
 #from samsung...
-TARGET_EMULATOR := false
+
 #TARGET_NO_BOOTLOADER := true
 #TARGET_NO_KERNEL := true
-HAVE_HTC_AUDIO_DRIVER := true
+HAVE_HTC_AUDIO_DRIVER := false
 BOARD_CAMERA_USE_GETBUFFERINFO:=true
-ANDROID_JPEG_NO_ASSEMBLER := true 
+#ANDROID_JPEG_NO_ASSEMBLER := true 
 #BOARD_USE_FROYO_LIBCAMERA := false
 TARGET_CPU_ABI := armeabi
 #audiostuff
-BOARD_HAVE_FM_RADIO := false
-BOARD_GLOBAL_CFLAGS -= -DHAVE_FM_RADIO
-#TARGET_BOARD_PLATFORM := msm7k
+BUILD_TINY_ANDROID := false
+QC_PROP := true
+
+TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOOTLOADER_BOARD_NAME := transformultra
-#TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 BOARD_USES_QCOM_VOIPMUTE := false
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=SPH-M930BST
 BOARD_KERNEL_BASE := 0x00400000
@@ -34,7 +35,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1055916032
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_PREBUILT_KERNEL := device/samsung/transformultra/files/kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/transformultra/files/kernel
 TARGET_RECOVERY_INITRC := device/samsung/transformultra/files/recovery.rc
 BOARD_CUSTOM_GRAPHICS :=  ../../../device/samsung/transformultra/files/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/transformultra/files/recovery/recovery_ui.c
@@ -70,25 +71,7 @@ WITH_DEXPREOPT := true
 JS_ENGINE := v8
 
 
-#BOARD_HAS_NO_SELECT_BUTTON := true
-# Use this flag if the board has a ext4 partition larger than 2gb
-#BOARD_HAS_LARGE_FILESYSTEM := true
-# WiFi
-# WiFi
-# WiFi
-PRODUCT_WIRELESS_TOOLS := true
-WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WPA_SUPPLICANT_DRIVER := DHD
-BOARD_WLAN_DEVICE := bcm4330
-WIFI_DRIVER_MODULE_PATH := "/lib/modules/dhd.ko"
-WIFI_DRIVER_MODULE_NAME := "dhd"
-BOARD_WEXT_NO_COMBO_SCAN := true
-WIFI_DRIVER_STA_FIRMWARE_NAME := "bcm4330_sta.bin"
-WIFI_DRIVER_APS_FIRMWARE_NAME := "bcm4330_aps.bin"
-WIFI_DRIVER_FW_STA_PATH := "/system/etc/wifi/bcm4330_sta.bin"
-WIFI_DRIVER_FW_AP_PATH := "/system/etc/wifi/bcm4330_aps.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-WIFI_DRV_AP_MODULE_ARG := "firmware_path=/system/etc/wifi/bcm4330_aps.bin nvram_path=/system/etc/wifi/nvram_net.txt"
+
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/transformultra/files
 BOARD_USE_QCOM_SPEECH := true
 # FM Radio (needed for the audio driver to compile)
@@ -97,3 +80,7 @@ BOARD_USE_QCOM_SPEECH := true
 #BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 #BOARD_FM_DEVICE := bcm4325
 #BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
+BOARD_HAVE_FM_RADIO := true
+TARGET_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+TARGET_GLOBAL_CPPFLAGS += -DHAVE_FM_RADIO
+BOARD_USE_BROADCOM_FM_VOLUME_HACK := true

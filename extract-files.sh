@@ -19,6 +19,7 @@ FILES="
 lib/libgsl.so
 lib/libaudioalsa.so
 lib/liblog.so
+lib/libdiag.so
 bin/logcat
 bin/logwrapper
 
@@ -46,12 +47,13 @@ done
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_COPY_FILES += \\
-vendor/samsung/transformultra/proprietary/lib/libgsl.so:system/lib/libgsl.so \\
-
+PRODUCT_COPY_FILES += \
+vendor/samsung/transformultra/proprietary/lib/libgsl.so:system/lib/libgsl.so \
+vendor/samsung/transformultra/proprietary/lib/libdiag.so:system/lib/libdiag.so\
 #audio....
-PRODUCT_COPY_FILES += \\
-vendor/samsung/transformultra/proprietary/lib/libaudioalsa.so:system/lib/libaudioalsa.so 
+PRODUCT_COPY_FILES += \
+vendor/samsung/transformultra/proprietary/lib/libaudioalsa.so:system/lib/libaudioalsa.so\
+vendor/samsung/transformultra/proprietary/lib/libaudioalsa.so:obj/lib/libaudioalsa.so 
 # Camera
 PRODUCT_COPY_FILES += \\
 

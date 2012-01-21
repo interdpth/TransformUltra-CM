@@ -28,7 +28,28 @@
 on boot-pause
     # exec system/bin/battery_charging
     exec system/bin/playlpm
-
+on fs
+# mount mtd partitions
+wait /dev/block/mmcblk0p15
+    mount ext4 /dev/block/mmcblk0p15 /system ro barrier=1
+    wait /dev/block/mmcblk0p17
+#    exec /system/bin/e2fsck -p /dev/block/mmcblk0p13
+    mount ext4 /dev/block/mmcblk0p17 /data nosuid nodev barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p12 /persist nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p16 /cache nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p27 /efs nosuid nodev barrier=0
+    mount ext4 /dev/block/mmcblk0p25 /permanent nosuid nodev barrier=1
+on emmc-fs
+# mount mmc partitions
+    wait /dev/block/mmcblk0p15
+    mount ext4 /dev/block/mmcblk0p15 /system ro barrier=1
+    wait /dev/block/mmcblk0p17
+#    exec /system/bin/e2fsck -p /dev/block/mmcblk0p13
+    mount ext4 /dev/block/mmcblk0p17 /data nosuid nodev barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p12 /persist nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p16 /cache nosuid nodev barrier=1
+    mount ext4 /dev/block/mmcblk0p27 /efs nosuid nodev barrier=0
+    mount ext4 /dev/block/mmcblk0p25 /permanent nosuid nodev barrier=1
 on boot
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -43,8 +64,6 @@ on boot
     chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
-
-
 
     # Create the directories used by the Wireless subsystem
     # give system access to wpa_supplicant.conf for backup and restore
@@ -90,32 +109,7 @@ on boot
 
     #set ram_dump_level
     write /proc/ram_dump_level set_dump_level
-on fs
-# mount mtd partitions
-    # Mount /system rw first to give the filesystem a chance to save a checkpoint
- 
-   # mount mmc partitions
-    wait /dev/block/mmcblk0p15
-    mount ext4 /dev/block/mmcblk0p15 /system ro barrier=1
-    wait /dev/block/mmcblk0p17
-#    exec /system/bin/e2fsck -p /dev/block/mmcblk0p13
-    mount ext4 /dev/block/mmcblk0p17 /data nosuid nodev barrier=1 noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p12 /persist nosuid nodev barrier=1
-    mount ext4 /dev/block/mmcblk0p16 /cache nosuid nodev barrier=1
-    mount ext4 /dev/block/mmcblk0p27 /efs nosuid nodev barrier=0
-    mount ext4 /dev/block/mmcblk0p25 /permanent nosuid nodev barrier=1
-    
-on emmc-fs
-# mount mmc partitions
-    wait /dev/block/mmcblk0p15
-    mount ext4 /dev/block/mmcblk0p15 /system ro barrier=1
-    wait /dev/block/mmcblk0p17
-#    exec /system/bin/e2fsck -p /dev/block/mmcblk0p13
-    mount ext4 /dev/block/mmcblk0p17 /data nosuid nodev barrier=1 noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p12 /persist nosuid nodev barrier=1
-    mount ext4 /dev/block/mmcblk0p16 /cache nosuid nodev barrier=1
-    mount ext4 /dev/block/mmcblk0p27 /efs nosuid nodev barrier=0
-    mount ext4 /dev/block/mmcblk0p25 /permanent nosuid nodev barrier=1
+
 # rory
     chown system radio /sys/class/sec/rory/rory_control
     chmod 0664 /sys/class/sec/rory/rory_control
@@ -302,6 +296,8 @@ service qcom-sh /system/bin/sh /init.qcom.sh
     user root
     oneshot
 
+
+
 service SPH-M930-post-boot /system/bin/sh /init.SPH-M930BST.post_boot.sh
     user root
     disabled
@@ -323,11 +319,5 @@ service hdmid /system/bin/hdmid
     socket hdmid stream 0660 root system graphics
     disabled
 
-service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11
-    user root
-    disabled
-
-on property:ro.emmc=1
-    start rmt_storage
 on property:ro.hdmi.enable=true
     start hdmid
